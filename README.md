@@ -1,5 +1,14 @@
 webhook_servicebus.py
 
+$env:SERVICEBUS_CONNECTION_STRING = "Endpoint=sb://localhost/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Eby8vdM02xNOcqFlqUwJ7r1dvbjG3rJHB5Bsn4I4k9E=;UseDevelopmentEmulator=true;"
+# then start your FastAPI app, for example:
+uvicorn webhook_servicebus:app --host 0.0.0.0 --port 8000
+
+
+SERVICEBUS_CONNECTION_STRING=Endpoint=sb://localhost/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Eby8vdM02xNOcqFlqUwJ7r1dvbjG3rJHB5Bsn4I4k9E=;UseDevelopmentEmulator=true;
+SERVICEBUS_QUEUE=incidents
+RESULT_CALLBACK_URL=http://localhost:7071/process_result
+
 import os
 import json
 import logging
